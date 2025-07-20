@@ -1,0 +1,392 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+li {
+  list-style: none;
+}
+ul {
+  list-style: none;
+}
+a {
+  font: inherit;
+  font-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+/* button {
+  font: inherit;
+  border: none;
+  ma
+} */
+
+button {
+  font: inherit;
+  border: none;
+  width: max-content;
+  height: max-content;
+  padding: 10px 0;
+  background: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  gap: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+input {
+  font: inherit;
+  font-weight: 600;
+  color: black;
+  padding: 12px 8px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+input:focus {
+  outline: none;
+}
+
+body {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1 {
+  margin: 0;
+}
+.header {
+  /* padding: 10px 20px; */
+  width: 350px;
+  background-color: rgb(28, 28, 28);
+  color: white;
+  height: 100vh;
+  position: fixed;
+  /* overflow: hidden; */
+}
+.header_container {
+  display: grid;
+  justify-items: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  padding-inline: 20px;
+  padding-block-start: 20px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header_title-container {
+  font-weight: 800;
+  padding-block: 10px;
+  display: flex;
+  font-size: 2em;
+  gap: 0.8em;
+  justify-content: center;
+  align-items: center;
+}
+ion-icon {
+  /* padding-bottom: 5px; */
+  --ionicon-stroke-width: 30px;
+  /* color: rgb(244, 247, 247); */
+}
+.navbar {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.navbar_list {
+  display: grid;
+  gap: 20px;
+}
+.navbar_logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20em;
+  /* place-self: start; */
+  /* place-content: end; */
+  place-self: flex-start;
+  /* place-content: start; */
+}
+.navbar_list-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+/* main */
+main {
+  margin-left: 20em;
+  /* width: 100%; */
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 20px 50px;
+}
+.profile {
+  padding-block: 10px;
+  padding-inline: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 14px 12px -5px rgba(71, 70, 70, 0.35);
+  -webkit-box-shadow: 1px 14px 12px -5px rgba(65, 63, 63, 0.35);
+  -moz-box-shadow: 1px 14px 12px -5px rgba(47, 46, 46, 0.35);
+}
+label {
+  font-size: 20px;
+  color: rgb(83, 83, 83);
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.8px solid rgb(123, 121, 121);
+  padding-inline: 10px;
+  border-radius: 12px;
+}
+.images {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.username-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.username-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: rgb(78, 77, 77);
+}
+
+.data-container {
+  width: 1500px;
+  height: 650px;
+  box-shadow: 1px 14px 12px -5px rgba(71, 70, 70, 0.35);
+  -webkit-box-shadow: 1px 14px 12px -5px rgba(65, 63, 63, 0.35);
+  -moz-box-shadow: 1px 14px 12px -5px rgba(47, 46, 46, 0.35);
+  overflow: hidden;
+  /* overflow-y: scroll; */
+}
+.data-head {
+  padding-block: 10px;
+  padding-inline: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.data-title {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.button-action {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+}
+.add-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  max-width: max-content;
+  max-height: max-content;
+  padding: 15px 12px;
+  background-color: rgb(0, 35, 150);
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.add-task ion-icon {
+  font-size: 20px;
+}
+.btn-list {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 5px;
+  font-size: 16px;
+  max-height: max-content;
+  max-width: max-content;
+  padding: 15px 12px;
+  border-radius: 12px;
+  color: rgb(36, 227, 100);
+  background-color: rgb(242, 242, 242);
+}
+.btn-list ion-icon {
+  font-size: 20px;
+}
+
+/* card */
+
+.container-card {
+  padding: 15px;
+  margin-top: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+.card-todo {
+  display: grid;
+  gap: 20px;
+}
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.card-todo-container {
+  padding: 10px;
+  width: 450px;
+  box-shadow: 1px 15px 48px 3px rgba(0, 0, 0, 0.27);
+  -webkit-box-shadow: 1px 15px 48px 3px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: 1px 15px 48px 3px rgba(0, 0, 0, 0.27);
+  border-radius: 12px;
+}
+.card-todo-item {
+  display: grid;
+  gap: 15px;
+  padding-block: 10px;
+}
+
+.card-description {
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: justify;
+}
+.delete-task {
+  height: max-content;
+  width: max-content;
+  padding: 15px 14px;
+  background-color: red;
+  border-radius: 12px;
+  font-size: 16px;
+}
+.footer-card {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.date {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+.date ion-icon {
+  font-size: 20px;
+}

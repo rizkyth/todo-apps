@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APPS</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script defer src="app.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_container">
+        <div>
+          <div class="header_title-container">
+            <h1 class="header_title">TODO APP</h1>
+            <ion-icon name="briefcase"></ion-icon>
+          </div>
+          <nav class="navbar">
+            <ul class="navbar_list">
+              <li class="navbar_list-item">
+                <ion-icon name="business"></ion-icon>
+                <a href="#">DashBoard</a>
+              </li>
+              <li class="navbar_list-item">
+                <ion-icon name="desktop"></ion-icon>
+                <a href="#">TAKS</a>
+              </li>
+              <li class="navbar_list-item">
+                <ion-icon name="file-tray-stacked"></ion-icon>
+                <a href="#">GOALS</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="navbar_logout">
+          <button>
+            <ion-icon name="settings"></ion-icon>
+            <p>Setting</p>
+          </button>
+          <button>
+            <ion-icon name="log-out"></ion-icon>
+            <p>Logout</p>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="container">
+        <div class="profile">
+          <form action="submit">
+            <div class="search-container">
+              <label for="Search">
+                <ion-icon name="search"></ion-icon>
+              </label>
+              <input type="text" id="search" placeholder="Search Task" />
+            </div>
+          </form>
+          <div class="username-container">
+            <div class="img-wrapper">
+              <img src="./images/profiles.jpg" width="50" alt="asd" class="images" />
+            </div>
+            <div class="username-title">
+              <p>Rizky Taupik</p>
+              <p>Fullstack Developer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- data -->
+
+      <section class="container">
+        <div class="data-container">
+          <div class="data-head">
+            <h3 class="data-title">My Tasks</h3>
+            <div class="button-action">
+              <button class="btn-list">
+                <ion-icon name="list"></ion-icon>
+                <p>View List</p>
+              </button>
+              <button class="add-task">
+                <ion-icon name="add-circle"></ion-icon>
+                <p>Add Task</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="container-card">
+            <div class="card-todo">
+              <h3 class="card-title">To Do</h3>
+              <div class="card-todo-container">
+                <div class="card-todo-item">
+                  <p class="card-title">Webiste development</p>
+                  <p class="card-description" id="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus beatae, dolorem, iure nihil, excepturi architecto reprehenderit dolores alias quia aspernatur esse voluptatem possimus odio maxime praesentium
+                    quo nostrum dignissimos.
+                  </p>
+                  <div class="footer-card">
+                    <div class="date">
+                      <ion-icon name="calendar-number"></ion-icon>
+                      <p>Nov 17</p>
+                    </div>
+                    <!-- <input type="date" name="date" id="date" /> -->
+                    <div class="button-action">
+                      <button class="btn-list">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                        <p>Done</p>
+                      </button>
+                      <button class="add-task">
+                        <ion-icon name="speedometer"></ion-icon>
+                        <p>On Progress</p>
+                      </button>
+                      <button class="delete-task">
+                        <ion-icon name="trash"></ion-icon>
+                        <p>Delete</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-todo">
+              <h3 class="card-title">On Progress</h3>
+              <div class="card-todo-container">
+                <div class="card-todo-item">
+                  <p class="card-title">Webiste development</p>
+                  <p class="card-description" id="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus beatae, dolorem, iure nihil, excepturi architecto reprehenderit dolores alias quia aspernatur esse voluptatem possimus odio maxime praesentium
+                    quo nostrum dignissimos.
+                  </p>
+                  <div class="footer-card">
+                    <div class="date">
+                      <ion-icon name="calendar-number"></ion-icon>
+                      <p>Nov 17</p>
+                    </div>
+                    <!-- <input type="date" name="date" id="date" /> -->
+                    <div class="button-action">
+                      <button class="btn-list">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                        <p>Done</p>
+                      </button>
+                      <button class="add-task">
+                        <ion-icon name="speedometer"></ion-icon>
+                        <p>On Progress</p>
+                      </button>
+                      <button class="delete-task">
+                        <ion-icon name="trash"></ion-icon>
+                        <p>Delete</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-todo">
+              <h3 class="card-title">Done</h3>
+              <div class="card-todo-container">
+                <div class="card-todo-item">
+                  <p class="card-title">Webiste development</p>
+                  <p id="description" class="card-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus beatae, dolorem, iure nihil, excepturi architecto reprehenderit dolores alias quia aspernatur esse voluptatem possimus odio maxime praesentium
+                    quo nostrum dignissimos.
+                  </p>
+                  <div class="footer-card">
+                    <div class="date">
+                      <ion-icon name="calendar-number"></ion-icon>
+                      <p>Nov 17</p>
+                    </div>
+                    <!-- <input type="date" name="date" id="date" /> -->
+                    <div class="button-action">
+                      <button class="btn-list">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                        <p>Done</p>
+                      </button>
+                      <button class="add-task">
+                        <ion-icon name="speedometer"></ion-icon>
+                        <p>On Progress</p>
+                      </button>
+                      <button class="delete-task">
+                        <ion-icon name="trash"></ion-icon>
+                        <p>Delete</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
