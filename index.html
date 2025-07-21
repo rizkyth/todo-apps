@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO APPS</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <script defer src="app.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,9 +49,9 @@
     </header>
 
     <!-- Form -->
-    <div class="container-form">
+    <div id="form-show" class="container-form">
       <form action="submit" class="form" id="form">
-        <button class="close-form">
+        <button type="button" id="close-form" class="close-form">
           <ion-icon name="close"></ion-icon>
         </button>
         <div class="input-container">
@@ -107,7 +106,7 @@
                 <ion-icon name="list"></ion-icon>
                 <p>View List</p>
               </button>
-              <button class="add-task">
+              <button id="add-task" class="add-task">
                 <ion-icon name="add-circle"></ion-icon>
                 <p>Add Task</p>
               </button>
@@ -221,5 +220,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="./scripts/app.js" defer></script>
   </body>
 </html>
