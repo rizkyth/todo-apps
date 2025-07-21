@@ -37,17 +37,42 @@
           </nav>
         </div>
         <div class="navbar_logout">
-          <button>
+          <button class="button-logout">
             <ion-icon name="settings"></ion-icon>
-            <p>Setting</p>
+            <p class="logout">Setting</p>
           </button>
-          <button>
+          <button class="button-logout">
             <ion-icon name="log-out"></ion-icon>
-            <p>Logout</p>
+            <p class="logout">Logout</p>
           </button>
         </div>
       </div>
     </header>
+
+    <!-- Form -->
+    <div class="container-form">
+      <form action="submit" class="form" id="form">
+        <button class="close-form">
+          <ion-icon name="close"></ion-icon>
+        </button>
+        <div class="input-container">
+          <label for="task">Task</label>
+          <input type="text" name="task" id="task" placeholder="Add Task" />
+        </div>
+        <div class="input-container">
+          <label for="description">Description</label>
+          <textarea type="text" name="description" id="description"></textarea>
+        </div>
+        <div class="input-container">
+          <label for="date">Date</label>
+          <input type="date" name="date" id="date" />
+        </div>
+        <button type="submit" class="add-task">
+          <ion-icon name="add"></ion-icon>
+          <p>Add Task</p>
+        </button>
+      </form>
+    </div>
     <main>
       <section class="container">
         <div class="profile">
@@ -105,12 +130,12 @@
                       <p>Nov 17</p>
                     </div>
                     <!-- <input type="date" name="date" id="date" /> -->
-                    <div class="button-action">
-                      <button class="btn-list">
+                    <div class="button-action-card">
+                      <button class="delete-task">
                         <ion-icon name="checkmark-circle"></ion-icon>
                         <p>Done</p>
                       </button>
-                      <button class="add-task">
+                      <button class="delete-task">
                         <ion-icon name="speedometer"></ion-icon>
                         <p>On Progress</p>
                       </button>
@@ -138,12 +163,12 @@
                       <p>Nov 17</p>
                     </div>
                     <!-- <input type="date" name="date" id="date" /> -->
-                    <div class="button-action">
-                      <button class="btn-list">
+                    <div class="button-action-card">
+                      <button class="delete-task">
                         <ion-icon name="checkmark-circle"></ion-icon>
                         <p>Done</p>
                       </button>
-                      <button class="add-task">
+                      <button class="delete-task">
                         <ion-icon name="speedometer"></ion-icon>
                         <p>On Progress</p>
                       </button>
@@ -171,12 +196,12 @@
                       <p>Nov 17</p>
                     </div>
                     <!-- <input type="date" name="date" id="date" /> -->
-                    <div class="button-action">
-                      <button class="btn-list">
+                    <div class="button-action-card">
+                      <button class="delete-task">
                         <ion-icon name="checkmark-circle"></ion-icon>
                         <p>Done</p>
                       </button>
-                      <button class="add-task">
+                      <button class="delete-task">
                         <ion-icon name="speedometer"></ion-icon>
                         <p>On Progress</p>
                       </button>
