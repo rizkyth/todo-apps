@@ -2,10 +2,13 @@
 // import renderData from "./render.js";
 import createElementTask from "./render.js";
 import task from "./storage.js";
-
+const TaskStorage = "task";
 let idTask = null;
 document.addEventListener("DOMContentLoaded", () => {
-  if (task.length > 0) renderData(task);
+  if (Storage !== undefined) {
+    loadFromLocalStorage();
+    renderData(task);
+  }
 });
 const addButton = document.getElementById("add-task");
 
@@ -20,7 +23,6 @@ closeForm.addEventListener("click", () => {
   formContainer.classList.remove("active");
 });
 
-// console.log(addButton)
 const form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -45,6 +47,7 @@ form.addEventListener("submit", (e) => {
       onProgress: false,
     };
     task.push(data);
+    saveToLocalStorage();
   }
   formContainer.classList.remove("active");
   renderData(task);
@@ -78,6 +81,7 @@ function handlerDone(id) {
   if (tasks) {
     tasks.isDone = true;
     renderData(task);
+    saveToLocalStorage();
   }
 }
 function handleOnProgress(taskId) {
@@ -85,6 +89,7 @@ function handleOnProgress(taskId) {
   if (tasks) {
     tasks.onProgress = true;
     renderData(task);
+    saveToLocalStorage();
   }
 }
 
@@ -93,6 +98,7 @@ function handleDelete(taskId) {
   if (index !== -1) {
     task.splice(index, 1);
     renderData(task);
+    saveToLocalStorage();
   }
 }
 
@@ -129,6 +135,17 @@ function handleEdit(id) {
   }
 }
 
+function saveToLocalStorage() {
+  localStorage.setItem(TaskStorage, JSON.stringify(task));
+}
+
+function loadFromLocalStorage() {
+  const data = localStorage.getItem(TaskStorage);
+  if (data) {
+    const takss = JSON.parse(data);
+    task.push(...takss);
+  }
+}
 function GetId() {
   return +new Date();
 }
