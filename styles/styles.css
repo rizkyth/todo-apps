@@ -339,6 +339,7 @@ label {
   margin-top: 10px;
   width: 100%;
   display: grid;
+  align-items: start;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
 }
@@ -356,18 +357,30 @@ label {
   max-width: 350px;
   /* width: 100%; */
   /* width: 450px; */
-  box-shadow: 1px 15px 48px 3px rgba(0, 0, 0, 0.27);
-  -webkit-box-shadow: 1px 15px 48px 3px rgba(0, 0, 0, 0.27);
-  -moz-box-shadow: 1px 15px 48px 3px rgba(0, 0, 0, 0.27);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+
+  gap: 10px;
+
   border-radius: 12px;
+  visibility: hidden;
+}
+.card-todo-container.active {
+  visibility: visible;
 }
 .card-todo-item {
   /* max-width: 200px; */
   width: 100%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 15px;
   padding-inline: 10px;
   padding-block: 10px;
+  box-shadow: 1px 15px 48px 3px rgba(0, 0, 0, 0.27);
+  -webkit-box-shadow: 1px 15px 48px 3px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: 1px 15px 48px 3px rgba(0, 0, 0, 0.27);
 }
 
 .card-description {
