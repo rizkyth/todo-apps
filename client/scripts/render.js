@@ -6,7 +6,7 @@ function createElementTask(data, index, isDoneFn, onProgressFn, deleteFn, editFn
 
   const cardTitle = document.createElement("p");
   cardTitle.classList.add("card-title");
-  cardTitle.innerText = data.tasktitle;
+  cardTitle.innerText = data.title;
 
   const cardDescription = document.createElement("p");
   cardDescription.classList.add("card-description");

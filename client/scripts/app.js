@@ -1,13 +1,20 @@
 // document.addEventListener("DOMContentLoaded", () => {});\
 // import renderData from "./render.js";
+import { apiUpdateTask, apiGetTask, apiCreateTask, apiDelete } from "./api.js";
 import createElementTask from "./render.js";
 import task from "./storage.js";
 const TaskStorage = "task";
 let idTask = null;
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   if (Storage !== undefined) {
-    loadFromLocalStorage();
-    renderData(task);
+    const getTask = await apiGetTask();
+    // loadFromLocalStorage();
+    if (!getTask) return;
+
+    console.log(task);
+    task.push(...getTask);
+    // console.log(getTask);
+    renderData(getTask);
   }
 });
 const addButton = document.getElementById("add-task");
@@ -24,28 +31,29 @@ closeForm.addEventListener("click", () => {
 });
 
 const form = document.getElementById("form");
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const tasktitle = document.getElementById("task").value;
+  const title = document.getElementById("task").value;
   const description = document.getElementById("description").value;
   const date = document.getElementById("date").value;
-  const id = GetId();
+
   if (idTask) {
     const data = task.find((t) => t.id === idTask);
-    data.tasktitle = tasktitle;
+    data.title = title;
     data.description = description;
     data.date = date;
+    data.isDone;
+    data.onProgress;
+    await apiUpdateTask({ id: idTask, title, description, date, isDone: data.isDone, onProgress: data.onProgress });
     idTask = null;
     form.reset();
   } else {
     const data = {
-      id,
-      tasktitle,
+      title,
       description,
       date,
-      isDone: false,
-      onProgress: false,
     };
+    await apiCreateTask(data);
     task.push(data);
     saveToLocalStorage();
   }
@@ -80,33 +88,33 @@ function handlerDone(id) {
   const tasks = task.find((t) => t.id === id);
   if (tasks) {
     tasks.isDone = true;
+    apiUpdateTask(tasks);
     renderData(task);
     saveToLocalStorage();
   }
 }
 function handleOnProgress(taskId) {
   const tasks = task.find((t) => t.id === taskId);
+  console.log(tasks);
   if (tasks) {
     tasks.onProgress = true;
+    apiUpdateTask(tasks);
     renderData(task);
     saveToLocalStorage();
   }
 }
 
-function handleDelete(taskId) {
-  const index = task.findIndex((t) => t.id === taskId);
-  if (index !== -1) {
-    task.splice(index, 1);
-    renderData(task);
-    saveToLocalStorage();
-  }
+async function handleDelete(id) {
+  const tasks = await apiDelete({ id });
+  renderData(tasks);
+  saveToLocalStorage();
 }
 
 const searchInput = document.getElementById("search");
 
 searchInput.addEventListener("input", () => {
   const searchTerm = searchInput.value.toLowerCase();
-  const filteredTask = task.filter((data) => data.tasktitle.toLowerCase().includes(searchTerm));
+  const filteredTask = task.filter((data) => data.title.toLowerCase().includes(searchTerm));
   renderData(filteredTask);
 });
 
@@ -127,7 +135,7 @@ function handleEdit(id) {
     const descriptionInput = document.getElementById("description");
     const dateInput = document.getElementById("date");
 
-    taskInput.value = data.tasktitle;
+    taskInput.value = data.title;
     descriptionInput.value = data.description;
     dateInput.value = data.date;
   } else {
@@ -139,13 +147,9 @@ function saveToLocalStorage() {
   localStorage.setItem(TaskStorage, JSON.stringify(task));
 }
 
-function loadFromLocalStorage() {
-  const data = localStorage.getItem(TaskStorage);
-  if (data) {
-    const takss = JSON.parse(data);
-    task.push(...takss);
-  }
-}
-function GetId() {
-  return +new Date();
-}
+// function loadFromLocalStorage() {
+//   const data = localStorage.getItem(TaskStorage);
+//   if (data) {
+//     const takss = JSON.parse(data);
+//     task.push(...takss);
+//   }
